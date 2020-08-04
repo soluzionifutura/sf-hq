@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom"
 import OrganizationGantt from "./OrganizationGantt.js"
 import Wiki from "./Wiki.js"
 import Home from "./Home.js"
 
 const App = () => {
   return (
-    <Router basename='/'>
+    <Router>
       <Switch>
         <Route exact path="/" component={ Home } />
         <Route exact path="/gantt/:organization" component={ OrganizationGantt } />

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import withPersistence from "../hocs/withPersistence.js"
 import withSdk from "../hocs/withSdk.js"

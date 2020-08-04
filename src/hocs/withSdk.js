@@ -22,7 +22,7 @@ const withSdk = WrappedComponent => {
           if (res.ok) {
             const { access_token } = await res.json()
             props.persistence.set("access_token", access_token)
-            window.location.href = "/"
+            window.location.href = "/sf-hq"
           } else {
             console.error(await res.json())
             setError(true)
