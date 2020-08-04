@@ -1,8 +1,9 @@
 // import "./Sidebar.css"
+import withPersistence from "../hocs/withPersistence"
 import React from "react"
 
-export const Sidebar = ({ width = "200", height = "100vh", children }) => {
-  const [xPosition, setX] = React.useState(-width)
+export const Sidebar = ({ width = "200", height = "100vh", children, persistence }) => {
+  const [xPosition, setX] = React.useState(persistence.get("sidebar") || -width)
 
   const toggleMenu = () => {
     if (xPosition < 0) {
@@ -13,8 +14,9 @@ export const Sidebar = ({ width = "200", height = "100vh", children }) => {
   }
 
   React.useEffect(() => {
-    setX(0)
-  }, [])
+    persistence.set("sidebar", xPosition)
+  }, [xPosition])
+
   return (
     <React.Fragment>
       <div
@@ -38,4 +40,4 @@ export const Sidebar = ({ width = "200", height = "100vh", children }) => {
   )
 }
 
-export default Sidebar
+export default withPersistence(Sidebar)

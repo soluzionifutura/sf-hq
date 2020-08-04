@@ -29,9 +29,9 @@ const OrganizationGantt = ({ sdk, match, persistence }) => {
         <h3>Organizations</h3>
         <ul>
           {
-            organizations.map(organization => {
+            organizations.map((organization, i) => {
               return (
-                <li>
+                <li key={i}>
                   <img src = {organization.avatar_url} width={30}/><Link to = {`/gantt/${organization.login}`}>{ organization.login }</Link>
                 </li>
               )
