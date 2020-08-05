@@ -4,7 +4,7 @@ import withPersistence from "../hocs/withPersistence.js"
 import withSdk from "../hocs/withSdk.js"
 import githubLogo from "../assets/githubLogo.png"
 
-const clientId = "3a4d6f71dcd5a9385017"
+const clientId =  process.env.NODE_ENV === "development" ? "d8055d9190e92dc16367" : "3a4d6f71dcd5a9385017"
 const callbackUrl = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://soluzionifutura.github.io/sf-hq"
 
 const Home = (props) => {

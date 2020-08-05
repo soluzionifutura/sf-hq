@@ -72,11 +72,11 @@ const fetchOrganizationData = async ({ sdk, organization }) => {
                   parent: milestone.id,
                   title: `#${issue.number} ${issue.title}`,
                   text: `
-                    <a href="${issue.html_url}" target="_blank">#${issue.number} ${issue.title}</a>
                     ${issue.assignee ? `
                       <a href="${issue.assignee.html_url}" target="_blank">
                         <img src="${issue.assignee.avatar_url}" alt="${issue.assignee.login}" class="thumb">
                       </a>` : ""}
+                      <a href="${issue.html_url}" target="_blank">#${issue.number} ${issue.title}</a>
                   `,
                   start_date: new Date(issue.created_at),
                   end_date: issue.closed_at ? new Date(issue.closed_at) : dueOn,

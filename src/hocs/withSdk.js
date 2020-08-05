@@ -15,6 +15,7 @@ const withSdk = WrappedComponent => {
           const res = await fetch("https://wtrc7fvnyd.execute-api.eu-west-1.amazonaws.com/Prod/auth/", {
             method: "POST",
             body: JSON.stringify({
+              env: process.env.NODE_ENV,
               code: new URLSearchParams(window.location.search).get("code"),
               state: Math.random()
             })
